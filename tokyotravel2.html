@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" href="basestyle.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokyo Travel Tool</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <header id="theme-toggle" style="cursor: pointer;">
+        <h1>日本</h1>
+        <div class="header-bar"></div>
+        <h1>TRAVEL</h1>
+      </header>
+      <main>
+      
+        <div class ="top-bar">
+          <a class="map-link" href="https://www.google.com/maps/place/Tokyo" target="_blank">MAP X KNOWLEDGE</a>
+        </div>
+
+        <a href="flight.html" class="nav-tab">DEPARTURE X STATUS →</a>
+
+        <p id="status">
+          <span>DESTINATION //</span>
+          <span id="city-output">JAPAN</span>
+          <p id="tokyo-clock">00:00:00</p>
+        </p>
+
+        <input id="searchBox" class="search-input" type="text" placeholder="SEARCH // FILTER..." />
+      
+
+        <table>
+          <thead>
+            <tr>
+              <th>City</th>
+              <th>Category</th>
+              <th>Budget</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>静岡県 <span class="description">// Shizuoka</span></td>
+              <td>Urban x Nature</td>
+              <td>40,000 JPY</td>
+              <td>5/5</td>
+            </tr>
+
+            <tr>
+              <td>名古屋 <span class="description">// Nagoya</span></td>
+              <td>Urban</td>
+              <td>30,000 JPY</td>
+              <td>4/5</td>
+            </tr>
+
+            <tr>
+              <td>東京ドームシティ <br> <span class="description">// Tokyo Dome</span></td> 
+              <td>Entertainment</td>
+              <td>10,000 JPY</td>
+              <td>2/5</td>
+            </tr>
+
+            <tr>
+              <td>千葉県 <span class="description">// Chiba</span></td>
+              <td>Natural</td>
+              <td>15,000 JPY</td>
+              <td>4/5</td>
+            </tr>
+
+            <tr>
+              <td>横浜 <span class="description">// Yokohama</span></td>
+              <td>City</td>
+              <td>15,000 JPY</td>
+              <td>2/5</td>
+            </tr>
+
+            <tr>
+              <td>熱海市 <span class="description">// Atami</span></td>
+              <td>City</td>
+              <td>14,000 JPY</td>
+              <td>3/5</td>
+            </tr>  
+            
+            <tr>
+              <td>新倉山浅間公園 <br> <span class="description">// Arakurayama Sengen Park</span></td>
+              <td>Nature</td>
+              <td>10,000 JPY</td>
+              <td>3/5</td>
+            </tr>
+
+            <tr>
+              <td>川越 <span class="description">// Kawagoe</span></td>
+              <td>Urban x Historical</td>
+              <td>15,000 JPY</td>
+              <td>3/5</td>
+            </tr>
+
+            <tr>
+              <td>大山 <span class="description">// Mount Oyama</span></td>
+              <td>Nature</td>
+              <td>10,000 JPY</td>
+              <td>4/5</td>
+            </tr>
+
+            <tr>
+              <td>城ヶ崎海岸 <span class="description">// Jogasaki Coast</span></td>
+              <td>Nature</td>
+              <td>12,000 JPY</td>
+              <td>4/5</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p id="total"></p>
+      </main> 
+    </div>
+
+    <script src="travelapp.js"></script>
+  </body>
+</html>

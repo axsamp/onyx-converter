@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-onyx-bg: #000000;
+  --color-onyx-card: #0A0A0A;
+  --color-onyx-border: rgba(255, 255, 255, 0.08);
+  --color-onyx-purple: #C084FC;
+  --color-onyx-purple-glow: rgba(192, 132, 252, 0.25);
+  --color-onyx-text: #FFFFFF;
+  --color-onyx-muted: #71717A;
+  
+  --font-sans: "Inter", -apple-system, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --radius-onyx: 1rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-onyx-bg);
+    color: var(--color-onyx-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior: none;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .onyx-glass {
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-onyx-border);
+    border-radius: var(--radius-onyx);
+  }
+
+  .onyx-key {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-onyx-border);
+    border-radius: var(--radius-onyx);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    transition: all 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  .onyx-key:active {
+    background-color: var(--color-onyx-purple);
+    color: black;
+    transform: scale(0.95);
+    border-color: var(--color-onyx-purple);
+  }
+}
+
+.mono-number {
+  font-family: var(--font-mono);
+  letter-spacing: -0.05em;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
