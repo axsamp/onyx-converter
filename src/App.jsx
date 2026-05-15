@@ -37,7 +37,7 @@ export default function App() {
     <div className="min-h-screen bg-black text-white font-sans overflow-hidden will-change-transform">
       <div className="max-w-md mx-auto h-screen flex flex-col p-6">
         <header className="flex justify-between items-center py-4 mb-4">
-          <div className="flex items-center gap-2"><div className="w-1.5 h-6 bg-[#C084FC]" /><h1 className="text-xl font-black uppercase tracking-tighter">Onyx Converter</h1></div>
+          <div className="flex items-center gap-2"><div className="w-1.5 h-6 bg-[#FFC107]" /><h1 className="text-xl font-black uppercase tracking-tighter">Onyx Converter</h1></div>
           <button onClick={() => setIsSettingsOpen(true)} className="text-zinc-600 hover:text-white transition-colors"><Settings size={20} /></button>
         </header>
 
@@ -47,17 +47,17 @@ export default function App() {
             <div className="text-6xl font-black mono-number tracking-tighter truncate">¥{parseInt(yenAmount).toLocaleString()}</div>
           </div>
 
-          <motion.div key={convertedAmount} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="onyx-glass p-8 relative overflow-hidden group border-[#C084FC]/20">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#C084FC]/5 blur-3xl -mr-16 -mt-16 rounded-full" />
+          <motion.div key={convertedAmount} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="onyx-glass p-8 relative overflow-hidden group border-[#FFC107]/20">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFC107]/5 blur-3xl -mr-16 -mt-16 rounded-full" />
             <div className="relative z-10">
-              <span className="text-[10px] font-bold text-[#C084FC] uppercase tracking-[0.3em] block mb-2">Real Cost</span>
+              <span className="text-[10px] font-bold text-[#FFC107] uppercase tracking-[0.3em] block mb-2">Real Cost</span>
               <div className="flex items-baseline gap-2"><span className="text-4xl font-black mono-number">{currencySymbol}{convertedAmount}</span><span className="text-sm font-bold text-zinc-600 uppercase tracking-widest">Est.</span></div>
               <div className="mt-6 flex items-center gap-4 pt-6 border-t border-zinc-900">
                 <div className="flex-1">
                   <span className="text-[10px] font-bold text-zinc-600 uppercase block mb-1">Budget Impact</span>
                   <div className="flex items-center gap-2">
-                    <div className="flex-1 h-1.5 bg-zinc-900 rounded-full overflow-hidden"><motion.div initial={{ width: 0 }} animate={{ width: `${Math.min(budgetImpact, 100)}%` }} className={`h-full ${parseFloat(budgetImpact) > 50 ? 'bg-red-500' : 'bg-[#C084FC]'}`} /></div>
-                    <span className={`text-xs font-black mono-number ${parseFloat(budgetImpact) > 50 ? 'text-red-500' : 'text-[#C084FC]'}`}>{budgetImpact}%</span>
+                    <div className="flex-1 h-1.5 bg-zinc-900 rounded-full overflow-hidden"><motion.div initial={{ width: 0 }} animate={{ width: `${Math.min(budgetImpact, 100)}%` }} className={`h-full ${parseFloat(budgetImpact) > 50 ? 'bg-red-500' : 'bg-[#FFC107]'}`} /></div>
+                    <span className={`text-xs font-black mono-number ${parseFloat(budgetImpact) > 50 ? 'text-red-500' : 'text-[#FFC107]'}`}>{budgetImpact}%</span>
                   </div>
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function App() {
         </div>
 
         <div className="grid grid-cols-3 gap-3 pb-8">
-          {Keys.map(key => (<button key={key} onClick={() => handleKeyPress(key)} className={`h-20 onyx-key transition-all active:scale-95 ${key === 'C' ? 'text-red-500' : ''} ${key === 'DEL' ? 'text-[#C084FC]' : ''}`}>{key}</button>))}
+          {Keys.map(key => (<button key={key} onClick={() => handleKeyPress(key)} className={`h-20 onyx-key transition-all active:scale-95 ${key === 'C' ? 'text-red-500' : ''} ${key === 'DEL' ? 'text-[#FFC107]' : ''}`}>{key}</button>))}
         </div>
 
         <AnimatePresence>
@@ -76,14 +76,14 @@ export default function App() {
               <div className="space-y-10 flex-1">
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 text-zinc-600"><RefreshCw size={14} /><span className="text-[10px] font-bold uppercase tracking-widest">Conversion Rate</span></div>
-                  <div className="flex items-center gap-4"><span className="text-lg font-bold text-zinc-400 uppercase tracking-widest">1 {currencySymbol} = </span><input type="number" value={rate} onChange={(e) => setRate(parseFloat(e.target.value))} className="bg-transparent text-4xl font-black mono-number text-[#C084FC] border-b border-zinc-900 focus:outline-none w-32" /><span className="text-lg font-bold text-zinc-400 uppercase tracking-widest">JPY</span></div>
+                  <div className="flex items-center gap-4"><span className="text-lg font-bold text-zinc-400 uppercase tracking-widest">1 {currencySymbol} = </span><input type="number" value={rate} onChange={(e) => setRate(parseFloat(e.target.value))} className="bg-transparent text-4xl font-black mono-number text-[#FFC107] border-b border-zinc-900 focus:outline-none w-32" /><span className="text-lg font-bold text-zinc-400 uppercase tracking-widest">JPY</span></div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 text-zinc-600"><Wallet size={14} /><span className="text-[10px] font-bold uppercase tracking-widest">Daily Allowance</span></div>
-                  <div className="flex items-center gap-4"><span className="text-lg font-bold text-zinc-400 uppercase tracking-widest">¥</span><input type="number" value={dailyBudget} onChange={(e) => setDailyBudget(parseInt(e.target.value))} className="bg-transparent text-4xl font-black mono-number text-[#C084FC] border-b border-zinc-900 focus:outline-none w-full" /></div>
+                  <div className="flex items-center gap-4"><span className="text-lg font-bold text-zinc-400 uppercase tracking-widest">¥</span><input type="number" value={dailyBudget} onChange={(e) => setDailyBudget(parseInt(e.target.value))} className="bg-transparent text-4xl font-black mono-number text-[#FFC107] border-b border-zinc-900 focus:outline-none w-full" /></div>
                 </div>
               </div>
-              <button onClick={() => { triggerHaptic('medium'); setIsSettingsOpen(false); }} className="h-20 bg-[#C084FC] text-black font-black uppercase tracking-widest text-sm rounded-2xl active:scale-95 transition-all">Save Protocol</button>
+              <button onClick={() => { triggerHaptic('medium'); setIsSettingsOpen(false); }} className="h-20 bg-[#FFC107] text-black font-black uppercase tracking-widest text-sm rounded-2xl active:scale-95 transition-all">Save Protocol</button>
             </motion.div>
           )}
         </AnimatePresence>
